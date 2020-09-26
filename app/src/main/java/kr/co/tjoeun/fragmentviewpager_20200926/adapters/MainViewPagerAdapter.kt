@@ -10,14 +10,10 @@ import kr.co.tjoeun.fragmentviewpager_20200926.fragments.MyNameFragment
 class MainViewPagerAdapter(fm : FragmentManager) : FragmentPagerAdapter(fm) {
     override fun getItem(position: Int): Fragment {
 
-        if (position == 0) {
-            return MyNameFragment()
-        }
-        else if (position == 1) {
-            return MyAgeFragment()
-        }
-        else {
-            return MyAddressFragment()
+        return when(position) {
+            0 -> { MyNameFragment() }
+            1 -> { MyAgeFragment() }
+            else -> { MyAddressFragment() }
         }
 
     }
